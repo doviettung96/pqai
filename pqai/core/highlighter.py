@@ -7,9 +7,9 @@ import re
 import json
 import numpy as np
 
-from config.config import models_dir
-from core.utils import is_generic
-from core.vectorizers import SIFTextVectorizer
+from pqai.config.config import models_dir
+from pqai.core.utils import is_generic
+from pqai.core.vectorizers import SIFTextVectorizer
 
 embed = SIFTextVectorizer().__getitem__
 

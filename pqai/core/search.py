@@ -1,6 +1,6 @@
 import itertools
-from core.indexes import VectorIndex
-from core.results import SearchResult
+from pqai.core.indexes import VectorIndex
+from pqai.core.results import SearchResult
 
 class Searcher():
 

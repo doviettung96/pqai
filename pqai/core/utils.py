@@ -6,7 +6,7 @@ import re
 from functools import lru_cache
 import numpy as np
 
-from config.config import models_dir
+from pqai.config.config import models_dir
 
 # Load stopwords
 stopword_file = models_dir + 'stopwords.txt'

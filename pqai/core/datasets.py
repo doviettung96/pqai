@@ -1,5 +1,5 @@
 import json
-from config.config import models_dir
+from pqai.config.config import models_dir
 
 
 class Dataset():

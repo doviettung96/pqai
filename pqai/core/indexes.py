@@ -5,7 +5,7 @@ import os
 import faiss
 import psutil
 
-from config import config
+from pqai.config import config
 
 CHECK_MARK = u'\u2713'
 

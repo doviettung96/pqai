@@ -1,10 +1,10 @@
 import numpy as np
 import math
 
-from core.encoders import EmbeddingMatrix
-from core.encoders import BagOfEntitiesEncoder, BagOfVectorsEncoder
-from core.representations import BagOfVectors
-from config.config import models_dir
+from pqai.core.encoders import EmbeddingMatrix
+from pqai.core.encoders import BagOfEntitiesEncoder, BagOfVectorsEncoder
+from pqai.core.representations import BagOfVectors
+from pqai.config.config import models_dir
 
 class Ranker:
 
@@ -52,7 +52,7 @@ class MatchPyramidRanker(Ranker):
     """
     
     def __init__(self):
-        from core.matchpyramid import  calculate_similarity
+        from pqai.core.matchpyramid import  calculate_similarity
         import re # needed because of an issue in MatchZoo library
         super().__init__(calculate_similarity, 'similarity')
 
@@ -61,8 +61,8 @@ class ConvKNRMRanker(Ranker):
     def __init__(self):
         pass
 
-from core.representations import Text, Interaction
-from core.representations import embeddings
+from pqai.core.representations import Text, Interaction
+from pqai.core.representations import embeddings
 
 class CustomRanker(Ranker):
 

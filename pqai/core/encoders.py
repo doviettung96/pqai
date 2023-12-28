@@ -1,10 +1,10 @@
-from config.config import models_dir
-from core import utils
+from pqai.config.config import models_dir
+from pqai.core import utils
 import re
 import numpy as np
 from functools import lru_cache
 
-from core.representations import BagOfEntities
+from pqai.core.representations import BagOfEntities
 
 class Encoder:
 

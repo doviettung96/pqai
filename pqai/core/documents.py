@@ -1,6 +1,6 @@
 from dateutil.parser import parse as parse_date
-from core import db
-from core import utils
+from pqai.core import db
+from pqai.core import utils
 import re
 
 class Document:

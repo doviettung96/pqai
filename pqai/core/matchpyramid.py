@@ -5,7 +5,7 @@ from matchzoo.engine.base_preprocessor import load_preprocessor
 from matchzoo.engine.base_model import load_model
 from matchzoo.preprocessors.chain_transform import chain_transform
 import numpy as np
-from config.config import models_dir
+from pqai.config.config import models_dir
 
 MAX_LEN = 200
 MODEL_DIR = f'{models_dir}MatchPyramid_200_tokens/'

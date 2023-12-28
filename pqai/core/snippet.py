@@ -1,20 +1,20 @@
 import numpy as np
 from random import randrange
 import re
-from core import utils
-from core.highlighter import highlight as highlighter_fn
+from pqai.core import utils
+from pqai.core.highlighter import highlight as highlighter_fn
 
-from core.vectorizers import SIFTextVectorizer
+from pqai.core.vectorizers import SIFTextVectorizer
 text2vec = SIFTextVectorizer().embed
 
-from core.reranking import CustomRanker, ConceptMatchRanker
+from pqai.core.reranking import CustomRanker, ConceptMatchRanker
 ranker = CustomRanker()
 conceptmatch_ranker = ConceptMatchRanker()
 
-from core.documents import Document
-from core.encoders import default_boe_encoder
-from core.utils import get_sentences
-from core.sensible_span_extractor import SensibleSpanExtractor
+from pqai.core.documents import Document
+from pqai.core.encoders import default_boe_encoder
+from pqai.core.utils import get_sentences
+from pqai.core.sensible_span_extractor import SensibleSpanExtractor
 get_spans = SensibleSpanExtractor().return_ranked
 
 import time

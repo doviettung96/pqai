@@ -1,5 +1,5 @@
 import requests
-from config.config import extensions as EXTENSIONS
+from pqai.config.config import extensions as EXTENSIONS
 
 HTTP_SUCCESS = 200
 

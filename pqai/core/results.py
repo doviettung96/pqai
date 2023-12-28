@@ -1,5 +1,5 @@
-from core.documents import Document, Patent
-from core.classifiers import BOWSubclassPredictor
+from pqai.core.documents import Document, Patent
+from pqai.core.classifiers import BOWSubclassPredictor
 from collections import Counter
 import re
 

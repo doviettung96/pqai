@@ -6,7 +6,7 @@ from math import ceil
 from os import path
 import json
 
-#from config.config import INDEX_DIR
+#from pqai.config.config import INDEX_DIR
 
 
 class Indexer():

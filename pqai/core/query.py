@@ -1,5 +1,5 @@
 
-from core.indexes import Index
+from pqai.core.indexes import Index
 
 class Query():
 

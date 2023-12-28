@@ -5,10 +5,10 @@ import json
 from sklearn.decomposition import TruncatedSVD
 from sentence_transformers import SentenceTransformer
 
-from core.encoders import Encoder
-from config.config import models_dir
+from pqai.core.encoders import Encoder
+from pqai.config.config import models_dir
 
-DEFAULT_SBERT_MODEL = os.environ["DEFAULT_SBERT_MODEL"]
+DEFAULT_SBERT_MODEL = "pqai-vectorizer-v3"
 
 class Vectorizer(Encoder):
 
@@ -20,7 +20,7 @@ class Vectorizer(Encoder):
         return isinstance(item, str)
 
     def _encoding_fn(self, item):
-        return embed(item)
+        return self.embed(item)
 
     def embed(self, item):
         pass

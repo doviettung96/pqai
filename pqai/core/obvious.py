@@ -1,6 +1,6 @@
 import numpy as np
-from core.encoders import default_boe_encoder as boe_encoder
-from core.encoders import default_bov_encoder as bov_encoder
+from pqai.core.encoders import default_boe_encoder as boe_encoder
+from pqai.core.encoders import default_bov_encoder as bov_encoder
 from scipy.spatial import distance
 
 

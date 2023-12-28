@@ -1,4 +1,4 @@
-from core.classifiers import BOWSubclassPredictor
+from pqai.core.classifiers import BOWSubclassPredictor
 
 class SubclassBasedIndexSelector():
 

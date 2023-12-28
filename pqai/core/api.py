@@ -10,21 +10,6 @@ import botocore.exceptions
 from bs4 import BeautifulSoup
 from PIL import Image
 
-from core.vectorizers import SentBERTVectorizer
-from core.vectorizers import CPCVectorizer
-from core.index_selection import SubclassBasedIndexSelector
-from core.filters import FilterArray, PublicationDateFilter
-from core.filters import DocTypeFilter, KeywordFilter
-from core.obvious import Combiner
-from core.indexes import IndexesDirectory
-from core.search import VectorIndexSearcher
-from core.documents import Document, Patent
-from core.snippet import SnippetExtractor
-from core.reranking import ConceptMatchRanker
-from core.encoders import default_boe_encoder
-from core.results import SearchResult
-from core.encoders import default_embedding_matrix
-from core.datasets import PoC
 import core.remote as remote
 import core.utils as utils
 
@@ -37,6 +22,41 @@ from config.config import (
     allow_incoming_extension_requests,
     docs_dir
 )
+from pqai.core.vectorizers import SentBERTVectorizer
+from pqai.core.vectorizers import CPCVectorizer
+from pqai.core.index_selection import SubclassBasedIndexSelector
+from pqai.core.filters import FilterArray, PublicationDateFilter
+from pqai.core.filters import DocTypeFilter, KeywordFilter
+from pqai.core.obvious import Combiner
+from pqai.core.indexes import IndexesDirectory
+from pqai.core.search import VectorIndexSearcher
+from pqai.core.documents import Document, Patent
+from pqai.core.snippet import SnippetExtractor
+from pqai.core.reranking import ConceptMatchRanker
+from pqai.core.encoders import default_boe_encoder
+from pqai.core.results import SearchResult
+from pqai.core.encoders import default_embedding_matrix
+from pqai.core.datasets import PoC
+
+PQAI_S3_BUCKET_NAME = os.environ['PQAI_S3_BUCKET_NAME']
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+
+session = boto3.Session(
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY
+)
+s3 = session.resource('s3')
+
+from PIL import Image
+import pqai.core.remote as remote
+import pqai.core.utils as utils
+
+from pqai.config.config import indexes_dir, reranker_active, index_selection_disabled
+from pqai.config.config import allow_outgoing_extension_requests
+from pqai.config.config import allow_incoming_extension_requests
+from pqai.config.config import docs_dir
+from bs4 import BeautifulSoup
 
 vectorize_text = SentBERTVectorizer().embed
 available_indexes = IndexesDirectory(indexes_dir)
